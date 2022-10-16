@@ -39,11 +39,19 @@ body {
   font-weight: 400;
 }
 
+.cartIconContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: flex-end;
+}
+
 .containerPadreTitle {
   display: flex;
   justify-content: center;
   width: 100vw;
   margin: 30px 0px 0px 0px;
+  border-radius: 20px;
 }
 
 .itemListContainer {

@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className="containerNavbar">
       <a href="../public/index.html">
-        <img className="navbar-brand" src={logo} alt=""></img>
+        <img className="navbar-brand" src={logo} alt="" />
       </a>
       <ul className="navBar">
         <li className="nav-item">
@@ -23,5 +23,4 @@ const Navbar = () => {
     </div>
   );
 };
-
 export default Navbar;

@@ -5,18 +5,24 @@ import CartWidget from "./CartWidget";
 const Navbar = () => {
   return (
     <div className="containerNavbar">
-      <a href="../public/index.html">
+      <a className="nav-item--Enlace" href="../public/index.html">
         <img className="navbar-brand" src={logo} alt="" />
       </a>
       <ul className="navBar">
         <li className="nav-item">
-          <a href="#">Productos</a>
+          <a className="nav-item--Enlace" href="#">
+            Productos
+          </a>
         </li>
         <li className="nav-item">
-          <a href="#">Nosotros</a>
+          <a className="nav-item--Enlace" href="#">
+            Nosotros
+          </a>
         </li>
         <li className="nav-item">
-          <a href="#">Contacto</a>
+          <a className="nav-item--Enlace" href="#">
+            Contacto
+          </a>
         </li>
       </ul>
       <CartWidget />

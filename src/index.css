@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&display=swap");
 
+/* ---------------- Generales ----------------*/
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: effra, sans-serif;
 }
 
 body {
@@ -13,6 +16,25 @@ body {
   font-family: effra, sans-serif;
   display: border-box;
 }
+
+ul {
+  list-style-type: none;
+}
+
+/* ---------------- Container Principal----------------*/
+
+.containerPadre {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 5em 15em 40em 5em;
+  grid-template-areas:
+    "nav"
+    "hero"
+    "products"
+    "footer";
+}
+
+/* ---------------- Navbar ----------------*/
 
 .containerNavbar {
   display: flex;
@@ -29,6 +51,8 @@ body {
   align-items: center;
   width: 18em;
   margin: 0px 40px;
+  font-weight: 500;
+  border-radius: 3rem;
 }
 
 .navbar-brand {
@@ -44,6 +68,8 @@ body {
   text-decoration: none;
 }
 
+/* ----------------Shooping Car ----------------*/
+
 .cartIconContainer {
   display: flex;
   flex-direction: row;
@@ -51,28 +77,7 @@ body {
   justify-items: flex-end;
 }
 
-.containerPadreTitle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  margin: 30px 0px 0px 0px;
-  border-radius: 20px;
-}
-
-.itemListContainer {
-  background-color: #f7f7f7;
-  border-radius: 10px;
-  width: 50vw;
-}
-
-.itemListTitle {
-  font-family: Bodoni Moda;
-  font-size: 5em;
-  margin: 20px 5px 5px 5px;
-  color: #060606;
-}
+/* ---------------- Contador ----------------*/
 
 .contadorContainer {
   display: flex;
@@ -98,6 +103,62 @@ body {
   text-decoration: none;
 }
 
-ul {
-  list-style-type: none;
+/* ------ Container Padre de las product Cards------------*/
+
+.itemListContainer {
+  grid-area: products;
+  width: 100%;
+}
+
+/* ---------------- Product Cards----------------*/
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.contentCard {
+  width: 20%;
+  height: 18em;
+  margin: 15px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  cursor: pointer;
+  padding-top: 10px;
+  box-shadow: 0 18px 28px rgba(0, 0, 0, 0.1);
+  transition: 0.4s;
+}
+
+.contentCard:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: translate(0px, -8px);
+}
+
+.cardTitle {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding-top: 1rem;
+}
+
+.cardPrice {
+  text-align: center;
+  padding-top: 0 8px;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.imgCard {
+  width: 15em;
+  height: 13rem;
+  object-fit: cover;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
 }

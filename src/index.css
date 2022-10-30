@@ -3,162 +3,171 @@
 /* ---------------- Generales ----------------*/
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: effra, sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: effra, sans-serif;
 }
 
 body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: effra, sans-serif;
-  display: border-box;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: effra, sans-serif;
+	display: border-box;
 }
 
 ul {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 /* ---------------- Container Principal----------------*/
 
 .containerPadre {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 5em 15em 40em 5em;
-  grid-template-areas:
-    "nav"
-    "hero"
-    "products"
-    "footer";
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 5em 15em 40em 5em;
+	grid-template-areas:
+		"nav"
+		"hero"
+		"products"
+		"footer";
 }
 
 /* ---------------- Navbar ----------------*/
 
 .containerNavbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100vw;
-  height: 5em;
-  background-color: #f7f7f7;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 100vw;
+	height: 5em;
+	background-color: #f7f7f7;
 }
 
 .navBar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 18em;
-  margin: 0px 40px;
-  font-weight: 500;
-  border-radius: 3rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 18em;
+	margin: 0px 40px;
+	font-weight: 500;
+	border-radius: 3rem;
 }
 
 .navbar-brand {
-  width: 70px;
+	width: 70px;
 }
 
 .nav-item {
-  font-weight: 400;
+	font-weight: 400;
 }
 
 .nav-item--Enlace {
-  color: black;
-  text-decoration: none;
+	color: black;
+	text-decoration: none;
 }
 
 /* ----------------Shooping Car ----------------*/
 
 .cartIconContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-items: flex-end;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-items: flex-end;
+}
+
+.heroContainer {
+	grid-area: hero;
 }
 
 /* ---------------- Contador ----------------*/
 
 .contadorContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 3rem;
-  width: 6rem;
-  background-color: #f7f7f7;
-  border-radius: 10px;
-  margin: 10px 0px 20px 0px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 3rem;
+	width: 6rem;
+	background-color: #f7f7f7;
+	border-radius: 10px;
+	margin: 10px 0px 20px 0px;
 }
 
 .contadorItem {
-  margin: 0px 10px 0px 10px;
+	margin: 0px 10px 0px 10px;
 }
 
 .botonAgregar {
-  background-color: #060606;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 10px;
-  text-decoration: none;
+	background-color: #060606;
+	color: white;
+	padding: 12px 18px;
+	border-radius: 10px;
+	text-decoration: none;
 }
 
 /* ------ Container Padre de las product Cards------------*/
 
 .itemListContainer {
-  grid-area: products;
-  width: 100%;
+	grid-area: products;
+	width: 100%;
+}
+
+.itemListInterno {
+	display: flex;
+	flex-direction: row;
 }
 
 /* ---------------- Product Cards----------------*/
 
 .cardContainer {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  margin: 50px 0;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	margin: 50px 0;
 }
 
 .contentCard {
-  width: 20%;
-  height: 18em;
-  margin: 15px;
-  box-sizing: border-box;
-  text-align: center;
-  border-radius: 5px;
-  background-color: #f7f7f7;
-  cursor: pointer;
-  padding-top: 10px;
-  box-shadow: 0 18px 28px rgba(0, 0, 0, 0.1);
-  transition: 0.4s;
+	width: 60%;
+	height: 18em;
+	margin: 15px;
+	box-sizing: border-box;
+	text-align: center;
+	border-radius: 5px;
+	background-color: #f7f7f7;
+	cursor: pointer;
+	padding-top: 10px;
+	box-shadow: 0 18px 28px rgba(0, 0, 0, 0.1);
+	transition: 0.4s;
 }
 
 .contentCard:hover {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  transform: translate(0px, -8px);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	transform: translate(0px, -8px);
 }
 
 .cardTitle {
-  text-align: center;
-  font-size: 1.1rem;
-  font-weight: 700;
-  padding-top: 1rem;
+	text-align: center;
+	font-size: 1.1rem;
+	font-weight: 700;
+	padding-top: 1rem;
 }
 
 .cardPrice {
-  text-align: center;
-  padding-top: 0 8px;
-  font-size: 1rem;
-  margin: 0;
+	text-align: center;
+	padding-top: 0 8px;
+	font-size: 1rem;
+	margin: 0;
 }
 
 .imgCard {
-  width: 15em;
-  height: 13rem;
-  object-fit: cover;
-  text-align: center;
-  margin: 0 auto;
-  display: block;
+	width: 15em;
+	height: 13rem;
+	object-fit: cover;
+	text-align: center;
+	margin: 0 auto;
+	display: block;
 }

@@ -2,19 +2,20 @@ import React from "react";
 import Item from "./Item";
 
 function ItemList({ listaProductos }) {
-  return (
-    <div>
-      {listaProductos.map((listaItems) => {
-        return (
-          <Item
-            key={listaItems.id}
-            title={listaItems.title}
-            price={listaItems.price}
-          />
-        );
-      })}
-    </div>
-  );
+	return (
+		<div className="itemListInterno">
+			{listaProductos.map((listaItems) => {
+				return (
+					<Item
+						id={listaItems.id}
+						title={listaItems.title}
+						price={listaItems.price}
+						img={listaItems.img}
+					/>
+				);
+			})}
+		</div>
+	);
 }
 
 export default ItemList;

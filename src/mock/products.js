@@ -34,6 +34,24 @@ export const products = [
 		category: "pantalones",
 		img: "https://cdn.shopify.com/s/files/1/0533/8877/1508/products/2401013-1_1024x1024.png?v=1645978583",
 	},
+
+	{
+		id: "5",
+		title: "Pantalon verde",
+		price: 3000,
+		stock: 7,
+		category: "pantalones",
+		img: "https://cdn.shopify.com/s/files/1/0533/8877/1508/products/2401013-1_1024x1024.png?v=1645978583",
+	},
+
+	{
+		id: "6",
+		title: "Pantalon verde",
+		price: 3000,
+		stock: 7,
+		category: "pantalones",
+		img: "https://cdn.shopify.com/s/files/1/0533/8877/1508/products/2401013-1_1024x1024.png?v=1645978583",
+	},
 ];
 
 export const getProductos = () => {

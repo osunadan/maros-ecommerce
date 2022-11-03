@@ -1,29 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { getProductos } from "../mock/products";
+import { useState } from "react";
 
 function Hero() {
-	return (
-		<div className="heroContainer">
-			<p className="titleHero">Siete Fashion Store</p>
-			<ul className="CategoriesContainer">
-				<li className="categorieItem">
-					<Link className="categorieLink" to="/categoryid/pantalones">
-						Pantalones
-					</Link>
-				</li>
-				<li className="categorieItem">
-					<Link className="categorieLink" to="/categoryid/blusas">
-						Blusas
-					</Link>
-				</li>
-				<li className="categorieItem">
-					<Link className="categorieLink" to="/categoryid/sweaters">
-						Sweaters
-					</Link>
-				</li>
-			</ul>
-		</div>
-	);
+  const [cat, setcat] = useState([]);
+
+  getProductos().then((products) => {
+    const categorias = products.map((prod) => {
+      return prod.category;
+    });
+
+    const soloCategorias = categorias.reduce((acc, item) => {
+      if (!acc.includes(item)) {
+        acc.push(item);
+      }
+      return acc;
+    }, []);
+    setcat(soloCategorias);
+  });
+
+  return (
+    <div className="heroContainer">
+      <p className="titleHero">Siete Fashion Store</p>
+      <ul className="CategoriesContainer">
+        {cat.map((cat) => {
+          return (
+            <Link className="categorieLink" to={`/categoryid/${cat}`}>
+              <li className="categorieItem">{cat}</li>
+            </Link>
+          );
+        })}
+      </ul>
+    </div>
+  );
 }
 
 export default Hero;

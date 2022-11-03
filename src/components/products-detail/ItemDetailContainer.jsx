@@ -11,10 +11,10 @@ function ItemDetailContainer() {
 
 	useEffect(() => {
 		getProductos().then((products) => {
-			const prueba = products.find((prod) => {
+			const prodSeleccionado = products.find((prod) => {
 				return prod.id === detalleid;
 			});
-			setItem(prueba);
+			setItem(prodSeleccionado);
 		});
 	}, []);
 

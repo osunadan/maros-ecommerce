@@ -44,9 +44,9 @@ ul {
 
 .navBar {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: center;
-	width: 18em;
+	width: 80%;
 	margin: 0px 40px;
 	font-weight: 500;
 	border-radius: 3rem;
@@ -57,7 +57,9 @@ ul {
 }
 
 .nav-item {
-	font-weight: 400;
+	font-size: 1rem;
+	font-weight: 300;
+	margin: 0 1em;
 }
 
 .nav-item--Enlace {

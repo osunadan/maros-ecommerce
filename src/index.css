@@ -1,224 +1,253 @@
 /* ---------------- Generales ----------------*/
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	margin: 0;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-family: "Kanit", sans-serif;
-	display: border-box;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Kanit", sans-serif;
+  display: border-box;
 }
 
 ul {
-	list-style-type: none;
+  list-style-type: none;
 }
 
 /* ---------------- Container Principal----------------*/
 
 .containerPadre {
-	display: grid;
-	grid-template-columns: 100%;
-	grid-template-rows: 5em 15em 40em 5em;
-	grid-template-areas:
-		"nav"
-		"hero"
-		"products"
-		"footer";
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 5em 15em 82% 5em;
+  grid-template-areas:
+    "nav"
+    "hero"
+    "products"
+    "footer";
 }
 
 /* ---------------- Navbar ----------------*/
 
 .containerNavbar {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	width: 100vw;
-	height: 5em;
-	background-color: #f7f7f7;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  height: 5em;
+  background-color: #f7f7f7;
 }
 
 .navBar {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	width: 80%;
-	margin: 0px 40px;
-	font-weight: 500;
-	border-radius: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  margin: 0px 40px;
+  font-weight: 500;
+  border-radius: 3rem;
 }
 
 .navbar-brand {
-	width: 70px;
+  width: 70px;
 }
 
 .nav-item {
-	font-size: 1rem;
-	font-weight: 300;
-	margin: 0 1em;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0 1em;
 }
 
 .nav-item--Enlace {
-	color: black;
-	text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 /* ----------------Shooping Car ----------------*/
 
 .cartIconContainer {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: flex-end;
 }
 
 /* ----------------Hero Section ----------------*/
 
 .heroContainer {
-	grid-area: hero;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	width: 100%;
+  grid-area: hero;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .titleHero {
-	font-family: "Kanit", sans-serif;
-	font-size: 4rem;
-	font-weight: 300;
-	background-color: #242424;
-	color: #ecc042;
-	width: 100%;
-	text-align: center;
+  font-family: "Kanit", sans-serif;
+  font-size: 4rem;
+  font-weight: 300;
+  background-color: #242424;
+  color: #ecc042;
+  width: 100%;
+  text-align: center;
 }
 
 .CategoriesContainer {
-	display: flex;
-	background-color: #f7f7f7;
-	width: 100%;
-	justify-content: center;
+  display: flex;
+  background-color: #f7f7f7;
+  width: 100%;
+  justify-content: center;
 }
 
 .categorieItem {
-	background-color: #e9e9e9;
-	border-bottom: 3px solid #242424;
-	padding: 0.5em 1.5em;
+  background-color: #e9e9e9;
+  border-bottom: 3px solid #242424;
+  padding: 0.5em 1.5em;
 }
 
 .categorieItem:hover {
-	background-color: #a7a7a7;
-	border-bottom: 3px solid #242424;
-	padding: 0.5em 1.5em;
+  background-color: #a7a7a7;
+  border-bottom: 3px solid #242424;
+  padding: 0.5em 1.5em;
 }
 
 .categorieLink {
-	font-size: 2rem;
-	font-weight: 300;
-	color: #242424;
-	text-decoration: none;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #242424;
+  text-decoration: none;
 }
 
 .categorieLink:hover {
-	color: #f7f7f7;
+  color: #f7f7f7;
 }
 /* ---------------- Contador ----------------*/
 
 .contadorContainer {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	height: 3rem;
-	width: 6rem;
-	background-color: #f7f7f7;
-	border-radius: 10px;
-	margin: 10px 0px 20px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 6rem;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  margin: 10px 0px 20px 0px;
 }
 
 .contadorItem {
-	margin: 0px 10px 0px 10px;
+  margin: 0px 10px 0px 10px;
 }
 
 .botonAgregar {
-	background-color: #060606;
-	color: white;
-	padding: 12px 18px;
-	border-radius: 10px;
-	text-decoration: none;
+  background-color: #060606;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  text-decoration: none;
 }
 
 /* ------ Container Padre de las product Cards------------*/
 
 .itemListContainer {
-	grid-area: products;
-	width: 100vw;
+  grid-area: products;
+  width: 100vw;
 }
 
 .itemListInterno {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 /* ---------------- Product Cards----------------*/
 
 .cardContainer {
-	display: flex;
-	width: 100%;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .contentCard {
-	width: 18rem;
-	height: 20em;
-	margin: 15px;
-	box-sizing: border-box;
-	text-align: center;
-	background-color: #f7f7f7;
-	cursor: pointer;
-	border: 3px solid #060606;
-	transition: 0.4s;
-	display: flex;
-	flex-direction: column;
+  width: 18rem;
+  height: 20em;
+  margin: 15px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #f7f7f7;
+  cursor: pointer;
+  border: 3px solid #060606;
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
 }
 
 .contentCard:hover {
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-	transform: translate(0px, -8px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: translate(0px, -8px);
 }
 
 a div p.cardTitle {
-	text-align: center;
-	text-decoration: none;
-	font-size: 1.1rem;
-	font-weight: 700;
-	padding-top: 2rem;
-	color: #060606;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding-top: 2rem;
+  color: #060606;
 }
 
 a p.cardPrice {
-	text-align: center;
-	padding-top: 0 8px;
-	font-size: 1rem;
-	margin: 0;
-	color: #060606;
+  text-align: center;
+  padding-top: 0 8px;
+  font-size: 1rem;
+  margin: 0;
+  color: #060606;
 }
 
 .imgCard {
-	width: 100%;
-	height: 13rem;
-	object-fit: cover;
-	text-align: center;
-	margin: 0 auto;
-	display: block;
+  width: 100%;
+  height: 13rem;
+  object-fit: cover;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
 }
 
 a.cardEnlace {
-	text-decoration: none;
+  text-decoration: none;
+}
+
+/* ---------------- Cart Section----------------*/
+
+.cartContainer {
+  display: grid;
+  grid-template-areas: "products";
+  grid-template-rows: repeat(auto-fill, minmax(18em, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 95em));
+  justify-content: center;
+  /*grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));*/
+}
+
+.containerInternoCart {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.containerImg {
+  width: 15%;
+}
+
+.imgProductCart {
+  width: 100%;
+  object-fit: cover;
 }

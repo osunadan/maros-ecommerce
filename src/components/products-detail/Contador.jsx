@@ -1,11 +1,10 @@
 import React from "react";
 import { useState } from "react";
 
-function ItemCount({ stock, initial, onAdd }) {
+function Contador({ stock, initial, onAdd }) {
   const [cantidad, setCantidad] = useState(0);
-  const valorSeleccionado = {
-    cantidad,
-  };
+
+  console.log(cantidad);
 
   const sumar = () => {
     if (cantidad < stock) {
@@ -17,6 +16,10 @@ function ItemCount({ stock, initial, onAdd }) {
     if (cantidad > initial) {
       setCantidad(cantidad - 1);
     }
+  };
+
+  const agregar = () => {
+    onAdd(cantidad);
   };
 
   return (
@@ -31,17 +34,12 @@ function ItemCount({ stock, initial, onAdd }) {
         </a>
       </div>
       <div>
-        <a
-          onClick={() => {
-            onAdd(valorSeleccionado);
-          }}
-          className="botonAgregar"
-          href="#">
-          Agregar{" "}
+        <a onClick={agregar} className="botonAgregar" href="#">
+          Agregar al carrito
         </a>
       </div>
     </>
   );
 }
 
-export default ItemCount;
+export default Contador;

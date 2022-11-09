@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getProductos } from "../mock/products";
+import { getProducts } from "../mock/products";
 import { useState } from "react";
 
 function Hero() {
   const [cat, setcat] = useState([]);
 
-  getProductos().then((products) => {
+  getProducts().then((products) => {
     const categorias = products.map((prod) => {
       return prod.category;
     });

@@ -1,37 +1,46 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { products } from "../../mock/products";
 import ItemList from "./ItemList";
-import { getProductos } from "../../mock/products";
+import { getProductsAndByCategory } from "../../mock/products";
+import FadeLoader from "react-spinners/FadeLoader";
 
 function ItemListContainer() {
-	const [productos, setProductos] = useState([]);
-	const { categoryName } = useParams();
-	const productosFiltrados = products.filter((prod) => {
-		return prod.category === categoryName;
-	});
+  const [productos, setProductos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const { categoryName } = useParams();
 
-	useEffect(() => {
-		if (categoryName) {
-			setProductos(productosFiltrados);
-		} else {
-			getProductos()
-				.then((productosObtenidos) => {
-					setProductos(productosObtenidos);
-				})
-				.catch(() => {
-					console.log("Algo salio mal wey");
-				});
-		}
-	}, [categoryName]);
+  useEffect(() => {
+    getProductsAndByCategory(categoryName)
+      .then((productosObtenidos) => {
+        setProductos(productosObtenidos);
+      })
+      .catch(() => {
+        console.log("Algo salio mal wey");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
 
-	return (
-		<div className="itemListContainer">
-			<ItemList listaProductos={productos} />
-		</div>
-	);
+    return () => {
+      setLoading(true);
+    };
+  }, [categoryName]);
+
+  if (loading) {
+    const override: CSSProperties = {
+      display: "flex",
+      alignItems: "center",
+      alignContent: "center",
+      justifyContent: "center",
+    };
+    return <FadeLoader cssOverride={override} />;
+  }
+
+  return (
+    <div className="itemListContainer">
+      <ItemList listaProductos={productos} />
+    </div>
+  );
 }
 
 export default ItemListContainer;

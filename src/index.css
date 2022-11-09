@@ -251,3 +251,11 @@ a.cardEnlace {
   width: 100%;
   object-fit: cover;
 }
+
+/* ---------------- Loader ---------------*/
+.loader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

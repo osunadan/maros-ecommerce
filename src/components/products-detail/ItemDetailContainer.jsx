@@ -1,28 +1,44 @@
-import React from "react";
 import ItemDetail from "./ItemDetail";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getProductos } from "../../mock/products";
+import { getProducts } from "../../mock/products";
+import FadeLoader from "react-spinners/FadeLoader";
 
 function ItemDetailContainer() {
-	const [item, setItem] = useState({});
-	const { detalleid } = useParams();
+  const [item, setItem] = useState({});
+  const [loading, setLoading] = useState(true);
+  const { detalleid } = useParams();
 
-	useEffect(() => {
-		getProductos().then((products) => {
-			const prodSeleccionado = products.find((prod) => {
-				return prod.id === detalleid;
-			});
-			setItem(prodSeleccionado);
-		});
-	}, []);
+  useEffect(() => {
+    getProducts()
+      .then((products) => {
+        const prodSeleccionado = products.find((prod) => {
+          return prod.id === detalleid;
+        });
+        setItem(prodSeleccionado);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
 
-	return (
-		<div>
-			<ItemDetail productoEleguido={item} />
-		</div>
-	);
+  if (loading) {
+    const override: CSSProperties = {
+      display: "flex",
+      alignItems: "center",
+      alignContent: "center",
+      justifyContent: "center",
+    };
+    return <FadeLoader cssOverride={override} />;
+  }
+
+  return (
+    <div>
+      <ItemDetail productoEleguido={item} />
+    </div>
+  );
 }
 
 export default ItemDetailContainer;
+
+// {loading ? <h1>Cargando</h1> : <ItemDetail productoEleguido={item} />}

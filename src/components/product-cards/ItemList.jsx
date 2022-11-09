@@ -5,7 +5,7 @@ function ItemList({ listaProductos }) {
   return (
     <div className="itemListInterno">
       {listaProductos.map((listaItems) => {
-        return <Item id={listaItems.id} title={listaItems.title} price={listaItems.price} img={listaItems.img} />;
+        return <Item key={listaItems.id} id={listaItems.id} title={listaItems.title} price={listaItems.price} img={listaItems.img} />;
       })}
     </div>
   );

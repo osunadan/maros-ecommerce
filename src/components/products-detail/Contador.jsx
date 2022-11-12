@@ -1,10 +1,8 @@
 import React from "react";
-import { useState } from "react";
+import { useState, memo } from "react";
 
 function Contador({ stock, initial, onAdd }) {
   const [cantidad, setCantidad] = useState(0);
-
-  console.log(cantidad);
 
   const sumar = () => {
     if (cantidad < stock) {
@@ -42,4 +40,4 @@ function Contador({ stock, initial, onAdd }) {
   );
 }
 
-export default Contador;
+export default memo(Contador);

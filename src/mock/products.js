@@ -58,7 +58,7 @@ export const getProducts = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(products);
-    }, 1000);
+    }, 500);
   });
 };
 
@@ -68,6 +68,6 @@ export const getProductsAndByCategory = (categoryName) => {
     const resolucion = categoryName ? prodFiltrados : products;
     setTimeout(() => {
       resolve(resolucion);
-    }, 2500);
+    }, 500);
   });
 };

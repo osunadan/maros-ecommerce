@@ -1,28 +1,29 @@
-import { React, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import Contador from "./Contador";
 import { CartContext } from "../../Context/CartContext";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ productoEleguido }) => {
-  // Estado del componente
-  const [cantidad, setCantidad] = useState(0);
+  // Estado para mostrar el contador o el boton de ir a carrito
+  const [show, setShow] = useState(true);
 
   // Constante para usar el contexto
   const { addToCart } = useContext(CartContext);
 
   // Función con la cantidad del producto seleccionado
   const onAdd = (qty) => {
-    setCantidad(qty);
+    setShow(false);
     addToCart(productoEleguido, qty);
   };
 
   return (
     <div>
-      <img src={`${productoEleguido.img}`} alt="" />
+      <img src={`${productoEleguido.img}`} alt={productoEleguido.title} />
       <div>
         <h2>{productoEleguido.title}</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus optio, necessitatibus iusto odit cupiditate a quae tempora dolor earum laboriosam hic distinctio. Nemo odit laboriosam quasi! Temporibus fugit omnis deleniti?</p>
         <h3>${productoEleguido.price}</h3>
-        <Contador stock={productoEleguido.stock} initial={1} onAdd={onAdd} />
+        {show ? <Contador stock={productoEleguido.stock} initial={1} onAdd={onAdd} /> : <Link to="/carrito">Ir al carrito</Link>}
       </div>
     </div>
   );

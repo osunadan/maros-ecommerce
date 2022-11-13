@@ -33,6 +33,12 @@ const CartProvider = ({ children }) => {
     setCart(cartActualizado);
   };
 
+  // Función para tener el numero del producto seleccionado por el usuario
+  const cantidadDeProducto = (id) => {
+    const product = cart.find((prod) => prod.id === id);
+    return product?.cantidad;
+  };
+
   // Función para vaciar el carrito
   const deleteCart = () => {
     setCart([]);
@@ -65,7 +71,7 @@ const CartProvider = ({ children }) => {
     return count;
   };
 
-  return <CartContext.Provider value={{ cart, addToCart, deleteItem, totalUnidades, totalPrecioUnidad, deleteCart }}>{children}</CartContext.Provider>;
+  return <CartContext.Provider value={{ cart, addToCart, deleteItem, totalUnidades, totalPrecioUnidad, deleteCart, cantidadDeProducto }}>{children}</CartContext.Provider>;
 };
 
 export default CartProvider;

@@ -7,11 +7,9 @@ function Cart() {
 
   if (cart.length === 0)
     return (
-      <>
-        <h1>
-          Aun no has agregado productos al carrito, te invitamos a <Link to="/">Volver al catalogo</Link> para que selecciones alguno
-        </h1>
-      </>
+      <h1>
+        Aun no has agregado productos al carrito, te invitamos a <Link to="/">volver al catalogo</Link> para que selecciones alguno
+      </h1>
     );
 
   return (

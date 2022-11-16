@@ -259,3 +259,22 @@ a.cardEnlace {
   align-items: center;
   justify-content: center;
 }
+
+/* ----------------- Formulario ------------- */
+.formularioContainer {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.formItem {
+  margin: 30px 0px;
+  width: 20em;
+}

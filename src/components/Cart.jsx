@@ -17,7 +17,7 @@ function Cart() {
       <div className="cartContainer">
         {cart.map((itemInCart, index) => {
           return (
-            <div className="containerInternoCart">
+            <div key={index} className="containerInternoCart">
               <div className="containerImg">
                 <img className="imgProductCart" src={`${itemInCart.img}`} alt="" />
               </div>
@@ -31,13 +31,13 @@ function Cart() {
                 </a>
               </div>
               <p>{itemInCart.cantidad}</p>
-              <h3></h3>
             </div>
           );
         })}
       </div>
       <h3>Total:${totalPrecioUnidad()}</h3>
       <button onClick={deleteCart}>Vaciar carrito</button>
+      <Link to="/checkout">Ir a pagar</Link>
     </>
   );
 }

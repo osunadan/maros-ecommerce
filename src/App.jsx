@@ -3,8 +3,9 @@ import Hero from "./components/Hero";
 import Cart from "./components/Cart";
 import ItemListContainer from "./components/product-cards/ItemListContainer";
 import ItemDetailContainer from "./components/products-detail/ItemDetailContainer";
-import { Route, Routes } from "react-router-dom";
 import CartProvider from "./Context/CartContext";
+import Form from "./components/Checkout/Form";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/categoryid/:categoryName" element={<ItemListContainer />} />
           <Route path="/detail/:detalleid" element={<ItemDetailContainer />} />
           <Route path="/carrito" element={<Cart />} />
+          <Route path="/checkout" element={<Form />} />
         </Routes>
       </CartProvider>
     </div>

@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
-import { getProductsAndByCategory } from "../../mock/products";
+// import { getProductsAndByCategory } from "../../mock/products";
 import FadeLoader from "react-spinners/FadeLoader";
+import { getDocs, query, where } from "firebase/firestore";
+import { productsList } from "../../services/firebaseConfig";
 
 function ItemListContainer() {
   const [productos, setProductos] = useState([]);
@@ -10,30 +12,42 @@ function ItemListContainer() {
   const { categoryName } = useParams();
 
   useEffect(() => {
-    getProductsAndByCategory(categoryName)
-      .then((productosObtenidos) => {
-        setProductos(productosObtenidos);
+    const ref = categoryName ? query(productsList, where("category", "==", categoryName)) : productsList;
+
+    getDocs(ref)
+      .then((res) => {
+        const productos = res.docs.map((prod) => {
+          return {
+            id: prod.id,
+            ...prod.data(),
+          };
+        });
+        setProductos(productos);
       })
-      .catch(() => {
-        console.log("Algo salio mal wey");
+      .catch((err) => {
+        console.log(err);
       })
       .finally(() => {
         setLoading(false);
       });
-
     return () => {
       setLoading(true);
     };
   }, [categoryName]);
 
+  // getProductsAndByCategory(categoryName)
+  //.then((productosObtenidos) => {
+  //.  setProductos(productosObtenidos);
+  //.})
+  //..catch(() => {
+  //.  console.log("Algo salio mal wey");
+  //. })
+  //. .finally(() => {
+  //. setLoading(false);
+  //.});
+
   if (loading) {
-    const override: CSSProperties = {
-      display: "flex",
-      alignItems: "center",
-      alignContent: "center",
-      justifyContent: "center",
-    };
-    return <FadeLoader cssOverride={override} />;
+    return <FadeLoader />;
   }
 
   return (

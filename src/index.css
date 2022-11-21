@@ -260,7 +260,7 @@ a.cardEnlace {
   justify-content: center;
 }
 
-/* ----------------- Formulario ------------- */
+/* ----------------- Formulario Checkout------------- */
 .formularioContainer {
   min-height: 50vh;
   display: flex;
@@ -277,4 +277,14 @@ a.cardEnlace {
 .formItem {
   margin: 30px 0px;
   width: 20em;
+}
+
+/* ----------------- Formulario Status ------------- */
+
+.formularioContainerStatus {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

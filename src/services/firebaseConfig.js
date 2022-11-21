@@ -21,3 +21,5 @@ export const database = getFirestore(app);
 
 // Variable con la database y el nombre de la lista de productos
 export const productsList = collection(database, "products");
+
+export const orderList = collection(database, "orders");

@@ -20,6 +20,11 @@ const Navbar = () => {
             Contacto
           </a>
         </li>
+        <li className="nav-item">
+          <Link to="/status" className="nav-item--Enlace" href="#">
+            Status
+          </Link>
+        </li>
       </ul>
       <Link to={"/carrito"}>
         <CartWidget />

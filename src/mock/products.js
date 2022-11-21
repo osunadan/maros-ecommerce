@@ -44,21 +44,3 @@ export const products = [
     img: "https://res.cloudinary.com/druw9azmh/image/upload/v1668378446/ecommerce-rect-coderhouse/chamarra02_jyvcnr.jpg",
   },
 ];
-
-export const getProducts = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(products);
-    }, 500);
-  });
-};
-
-export const getProductsAndByCategory = (categoryName) => {
-  return new Promise((resolve, reject) => {
-    const prodFiltrados = products.filter((prod) => prod.category === categoryName);
-    const resolucion = categoryName ? prodFiltrados : products;
-    setTimeout(() => {
-      resolve(resolucion);
-    }, 500);
-  });
-};

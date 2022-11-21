@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
-// import { getProductsAndByCategory } from "../../mock/products";
 import FadeLoader from "react-spinners/FadeLoader";
 import { getDocs, query, where } from "firebase/firestore";
 import { productsList } from "../../services/firebaseConfig";
@@ -34,17 +33,6 @@ function ItemListContainer() {
       setLoading(true);
     };
   }, [categoryName]);
-
-  // getProductsAndByCategory(categoryName)
-  //.then((productosObtenidos) => {
-  //.  setProductos(productosObtenidos);
-  //.})
-  //..catch(() => {
-  //.  console.log("Algo salio mal wey");
-  //. })
-  //. .finally(() => {
-  //. setLoading(false);
-  //.});
 
   if (loading) {
     return <FadeLoader />;

@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { getDoc, doc, query, where, collection } from "firebase/firestore";
+import { getDoc, doc } from "firebase/firestore";
 import { orderList } from "../../services/firebaseConfig";
 
 function Status() {

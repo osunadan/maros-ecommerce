@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, memo } from "react";
 
 function Contador({ stock, initial = 1, onAdd }) {
@@ -23,18 +22,18 @@ function Contador({ stock, initial = 1, onAdd }) {
   return (
     <>
       <div className="contadorContainer">
-        <a className="contadorItem" href="#" onClick={sumar}>
+        <p className="contadorItem" href="#" onClick={sumar}>
           +
-        </a>
+        </p>
         <p className="contadorItem">{cantidad}</p>
-        <a className="contadorItem" href="#" onClick={restar}>
+        <p className="contadorItem" onClick={restar}>
           -
-        </a>
+        </p>
       </div>
       <div>
-        <a onClick={agregar} className="botonAgregar" href="#">
+        <p onClick={agregar} className="botonAgregar">
           Agregar al carrito
-        </a>
+        </p>
       </div>
     </>
   );

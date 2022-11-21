@@ -1,5 +1,5 @@
 import { React, useContext } from "react";
-import { CartContext } from "../Context/CartContext";
+import { CartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
 
 function Cart() {
@@ -23,12 +23,12 @@ function Cart() {
               </div>
               <div className="titleAndRemove">
                 <p>{itemInCart.title}</p>
-                <a
+                <p
                   onClick={() => {
                     deleteItem(index);
                   }}>
                   Remove Item
-                </a>
+                </p>
               </div>
               <p>{itemInCart.cantidad}</p>
             </div>

@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Cart from "./components/Cart";
+import MainContainer from "./components/main/MainContainer";
+import Cart from "./components/Checkout/Cart";
 import ItemListContainer from "./components/product-cards/ItemListContainer";
 import ItemDetailContainer from "./components/products-detail/ItemDetailContainer";
 import CartProvider from "./Context/CartContext";
@@ -13,7 +13,7 @@ function App() {
     <div className="containerPadre">
       <CartProvider>
         <Navbar />
-        <Hero />
+        <MainContainer />
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
           <Route path="/categoryid/:categoryName" element={<ItemListContainer />} />

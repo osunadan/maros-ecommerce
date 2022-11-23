@@ -59,12 +59,12 @@ function Form() {
 
 	if (orderId) {
 		return (
-			<>
+			<div class="mensajePostCompraContainer">
 				<h3>Gracias por tu compra</h3>
 				<p>Te proporcionamos el id de tu compra con el cual podras verificar el estatus de tu orden: {`${orderId}`}</p>
 				<Link to="/">Volver al catalogo</Link>
 				<Link to="/status">Ir a la sección de status</Link>
-			</>
+			</div>
 		);
 	}
 

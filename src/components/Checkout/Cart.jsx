@@ -13,36 +13,43 @@ function Cart() {
 		);
 
 	return (
-		<div className="cartContainer">
-			{cart.map((itemInCart, index) => {
-				return (
-					<div key={index} className="containerInternoCart">
-						<div className="containerImg">
-							<img className="imgProductCart" src={`${itemInCart.img}`} alt="" />
+		<div className="containerSuperiorCart">
+			<div className="cartContainer">
+				{cart.map((itemInCart, index) => {
+					return (
+						<div key={index} className="containerInternoCart">
+							<div className="containerImg">
+								<img
+									className="imgProductCart"
+									src={`${itemInCart.img}`}
+									alt=""
+								/>
+							</div>
+							<div className="titleAndRemove">
+								<p>{itemInCart.title}</p>
+								<p
+									className="botonAgregar"
+									onClick={() => {
+										deleteItem(
+											index
+										);
+									}}>
+									Remove
+									Item
+								</p>
+							</div>
+							<p>{itemInCart.cantidad}</p>
 						</div>
-						<div className="titleAndRemove">
-							<p>{itemInCart.title}</p>
-							<p
-								className="botonAgregar"
-								onClick={() => {
-									deleteItem(
-										index
-									);
-								}}>
-								Remove Item
-							</p>
-						</div>
-						<p>{itemInCart.cantidad}</p>
-					</div>
-				);
-			})}
-			<h3>Total:${totalPrecioUnidad()}</h3>
-			<p className="botonGenerico" onClick={deleteCart}>
-				Vaciar carrito
-			</p>
-			<Link className="botonGenerico" to="/checkout">
-				Ir a pagar
-			</Link>
+					);
+				})}
+				<h3>Total:${totalPrecioUnidad()}</h3>
+				<p className="botonGenerico" onClick={deleteCart}>
+					Vaciar carrito
+				</p>
+				<Link className="botonGenerico" to="/checkout">
+					Ir a pagar
+				</Link>
+			</div>
 		</div>
 	);
 }

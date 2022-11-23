@@ -4,7 +4,7 @@
 
 Este proyecto consiste en mostrar el catálogo de productos de "Siete Fashion Store", una marca de ropa ficticia. Con el cual se agregaron distintas funcionalidades con las que se pudiera aprovechar los recursos de React aprendidos durante el curso
 
-#### [En este enlace puedes ver la app en funcionamiento](daniel-osuna-45060.netlify.app)
+#### [En este enlace puedes ver la app en funcionamiento](https://daniel-osuna-45060.netlify.app/)
 
 ## Librerías utilizadas
 

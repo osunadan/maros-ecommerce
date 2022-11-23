@@ -12,6 +12,9 @@ function Main({ categorias }) {
 						</Link>
 					);
 				})}
+				<Link className="categorieLink" to={"/"}>
+					<li className="categorieItem">Todos</li>
+				</Link>
 			</ul>
 		</div>
 	);

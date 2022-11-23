@@ -20,7 +20,7 @@ function Form() {
 
 	const enviarDatos = (e) => {
 		e.preventDefault();
-		if (email1 === email2) {
+		if (email1 === email2 && name !== "" && lastName !== "" && adress !== "" && telefono !== "") {
 			const ordenDeCompra = {
 				buyer: {
 					name,
@@ -63,6 +63,7 @@ function Form() {
 				<h3>Gracias por tu compra</h3>
 				<p>Te proporcionamos el id de tu compra con el cual podras verificar el estatus de tu orden: {`${orderId}`}</p>
 				<Link to="/">Volver al catalogo</Link>
+				<Link to="/status">Ir a la sección de status</Link>
 			</>
 		);
 	}
@@ -81,16 +82,16 @@ function Form() {
 									alt=""
 								/>
 							</div>
-							<div>
-								<p>{itemInCart.title}</p>
-							</div>
-							<p>{itemInCart.cantidad}</p>
-							<p>${totalPrecioUnidad()}</p>
+							<p className="itemCheckout">{itemInCart.title}</p>
+							<p className="itemCheckout">{itemInCart.cantidad}</p>
 						</div>
 					);
 				})}
+				<div>
+					<h3>Total:</h3>
+					<p>${totalPrecioUnidad()}</p>
+				</div>
 			</div>
-			<Link to="/carrito">Volver al carrito</Link>
 			<form className="formulario" onSubmit={enviarDatos}>
 				<h3>Llena tus datos para completar tu compra</h3>
 				<input className="formItem" type="text" placeholder="Nombre" name="nombre" onChange={handleName} value={name} />

@@ -16,9 +16,9 @@ const ItemDetail = ({ productoEleguido }) => {
 	const cantidadSeleccionada = cantidadDeProducto(productoEleguido.id);
 
 	return (
-		<div>
+		<div className="containerDetail">
 			<img src={`${productoEleguido.img}`} alt={productoEleguido.title} />
-			<div>
+			<div className="infoProducto">
 				<h2>{productoEleguido.title}</h2>
 				<p>{productoEleguido.detail}</p>
 				<h3>${productoEleguido.price}</h3>
